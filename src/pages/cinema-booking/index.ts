@@ -1,0 +1,1 @@
+export { CinemaBooking } from './ui/CinemaBooking'

@@ -4,6 +4,11 @@ import { resolve } from 'path';
 
 export default defineConfig({
     plugins: [react()],
+    server: {
+        proxy: {
+            '/api': 'http://localhost:3000'
+        }
+    },
     resolve: {
         alias: {
             '@app': resolve(__dirname, 'src/app'),
@@ -13,8 +18,6 @@ export default defineConfig({
             '@pages': resolve(__dirname, 'src/pages'),
             '@widgets': resolve(__dirname, 'src/widgets'),
             '@processes': resolve(__dirname, 'src/processes'),
-            '@type': resolve(__dirname, 'src/types'),
-            '@assets': resolve(__dirname, 'src/assets'),
         },
     },
 });
